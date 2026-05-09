@@ -1,7 +1,7 @@
 # ⚛ AI-Native Quantum Laboratory Operating System
 
 <p align="center">
-  <img src="branding/pixel_art/shield_32x32.txt" alt="Westlake Singularity" width="200">
+ 
 </p>
 
 <p align="center">
