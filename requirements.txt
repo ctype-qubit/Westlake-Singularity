@@ -1,0 +1,24 @@
+# Westlake Singularity — Core Dependencies
+# Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+
+# Core
+websockets>=12.0
+asyncio
+numpy>=1.26
+
+# Agent Framework (Hermes Agent base)
+# git+https://github.com/NousResearch/hermes-agent.git
+
+# Vision (optional)
+opencv-python>=4.9.0
+pillow>=10.0
+
+# DFT (optional)
+ase>=3.22
+
+# Vector DB (optional)
+faiss-cpu>=1.8.0
+
+# LLM Serving (optional)
+# vllm>=0.6.0
+# torch>=2.4.0

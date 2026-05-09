@@ -1,0 +1,66 @@
+# Westlake Singularity — Docker Compose
+# Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+
+version: "3.8"
+
+services:
+  orchestrator:
+    build: .
+    container_name: singularity-orchestrator
+    ports:
+      - "9876:9876"          # WebSocket Event Bus
+      - "9877:9877"          # REST API
+    environment:
+      - SINGULARITY_ROLE=orchestrator
+      - SINGULARITY_HOME=/data
+    volumes:
+      - ./data:/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+
+  guard:
+    build: .
+    container_name: singularity-guard
+    environment:
+      - SINGULARITY_ROLE=guard
+      - SINGULARITY_ORCHESTRATOR=orchestrator:9876
+    depends_on:
+      - orchestrator
+    restart: unless-stopped
+
+  mapper:
+    build: .
+    container_name: singularity-mapper
+    environment:
+      - SINGULARITY_ROLE=mapper
+      - SINGULARITY_ORCHESTRATOR=orchestrator:9876
+    depends_on:
+      - orchestrator
+    restart: unless-stopped
+
+  discovery:
+    build: .
+    container_name: singularity-discovery
+    environment:
+      - SINGULARITY_ROLE=discovery
+      - SINGULARITY_ORCHESTRATOR=orchestrator:9876
+    depends_on:
+      - orchestrator
+    restart: unless-stopped
+
+  compute:
+    build: .
+    container_name: singularity-compute
+    environment:
+      - SINGULARITY_ROLE=compute
+      - SINGULARITY_ORCHESTRATOR=orchestrator:9876
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    depends_on:
+      - orchestrator
+    restart: unless-stopped

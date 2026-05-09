@@ -1,0 +1,45 @@
+# Westlake Singularity — 终端/UI配色方案
+# 配色哲学: 深蓝夜空 + 量子金光 + 西湖水纹
+
+theme:
+  name: "westlake-singularity"
+  version: "1.0.0"
+  description: "西湖大学AI量子实验室官方配色方案"
+
+  colors:
+    # 主色调
+    primary:    "#e8b830"    # 量子金 — 按钮高亮
+    secondary:  "#1a5c8a"   # 西湖蓝 — 次要元素
+    background: "#0a1628"   # 深蓝底 — 主背景
+    surface:    "#111d32"   # 面板底色
+    text:       "#f0f0f0"   # 正文白
+    muted:      "#5a7088"   # 次要文字
+
+    # 语义色
+    success:    "#00c896"   # 实验完成绿色
+    error:      "#ff4444"   # 告警红色
+    warning:    "#ffa726"   # 警告橙色
+    info:       "#4fc3f7"   # 信息浅蓝
+
+    # 特殊色
+    quantum:    "#e8b830"   # 量子比特金色
+    graphene:   "#4a5a6a"   # 石墨烯灰
+    supercon:   "#7c4dff"   # 超导紫色
+
+  tui:
+    prompt: "⚛"
+    spinner: "quantum_dot"  # ⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏量子自旋动画
+    border_style: "rounded"
+    input_color: "#e8b830"
+
+  syntax:
+    keyword:    "#ff79c6"
+    string:     "#f1fa8c"
+    number:     "#bd93f9"
+    comment:    "#6272a4"
+    function:   "#50fa7b"
+    class:      "#8be9fd"
+
+  wallpapers:
+    startup: "branding/pixel_art/startup_bg.txt"
+    ascii:   "branding/pixel_art/westlake_shield.txt"
