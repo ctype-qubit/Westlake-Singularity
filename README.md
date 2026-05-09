@@ -28,7 +28,7 @@
 | 🧭 **Orchestrator** | LV5 | 中央控制：任务DAG分解、资源仲裁、实验序列编排 |
 | 💻 **Compute** | LV2 | 超算调度：Slurm作业管理、vLLM推理、DFT计算对齐 |
 
- 各Agent 通过 **WAP (Westlake Agent Protocol)** 实时通讯，形成蜂群智能。
+ 各Agent 通过 **WAP** 实时通讯，形成蜂群智能。
 
 ---
 
