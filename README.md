@@ -88,8 +88,8 @@ westlake-singularity/
 | 角色 | 姓名 | 单位 |
 |------|------|------|
 | 🎓 博士生 | **丛家祥** (Jiaxiang Cong) | 西湖大学 · 物理系 |
-| 👨‍🏫 PI | **孔令元** 博士 | 西湖大学 · 凝聚态物理 |
-| 🤖 AI Partner | **Jupiter** (木星) | Westlake Singularity 中控Agent |
+| 👨‍🏫 PI | **孔令元** 博士 | 西湖大学 · 物理系 |
+| 🤖 AI Partner | **Jupiter** (木星) | Lab Agent |
 
 ---
 
