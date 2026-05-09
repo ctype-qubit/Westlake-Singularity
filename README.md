@@ -1,12 +1,12 @@
-# ⚛ Westlake Singularity · 西湖奇点
+# ⚛ AI-Native Quantum Laboratory Operating System
 
 <p align="center">
-  <img src="branding/pixel_art/shield_32x32.txt" alt="Westlake Singularity" width="200">
+ 
 </p>
 
 <p align="center">
   <strong>AI-Native Quantum Laboratory Operating System</strong><br>
-  <em>西湖大学 · AI量子实验室操作系统</em>
+
 </p>
 
 <p align="center">
@@ -17,51 +17,18 @@
 
 ---
 
-## 🎯 愿景
-
-> **我们建造的不是一个Agent，而是一整个 AI-Native 的量子实验室。**
-
-Westlake Singularity 是西湖大学丛家祥课题组打造的 **AI原生量子实验室操作系统**。它基于开源 Hermes Agent 框架深度重构，将千个共生 AI Agent 编织成一个科学发现蜂群——从 STM 针尖的扫描优化到 DFT 计算的对齐验证，从实验数据的异常发现到论文的自动撰写，全流程 AI 自主闭环。
-
----
-
-## 🏗️ 六层架构
-
-```
-┌─────────────────────────────────────────┐
-│  🏛️ 层6 · 联邦帝国    ← 跨组WAP协议     │
-│     多实验室Agent联邦，科研外交协议       │
-├─────────────────────────────────────────┤
-│  🪞 层5 · 数字孪生    ← Sim-to-Real      │
-│     COMSOL/DFT虚拟 → STM实体验证        │
-├─────────────────────────────────────────┤
-│  🧠 层4 · 认知层      ← 推理+验证循环    │
-│     Guard守护/Mapper映射/Discovery发现   │
-├─────────────────────────────────────────┤
-│  🎮 层3 · 控制层      ← gRPC/WebSocket   │
-│     Nanonis API, 超算Slurm, 硬件控制     │
-├─────────────────────────────────────────┤
-│  📡 层2 · 感知层      ← 8K视觉+LiDAR     │
-│     多模态传感器, 实时流式数据           │
-├─────────────────────────────────────────┤
-│  ⚛️  层1 · 物理层      ← 量子比特        │
-│     FeTeSe+hBN+QD, Majorana编织         │
-└─────────────────────────────────────────┘
-```
-
----
 
 ## 🤖 Agent 角色系统
 
 | 角色 | 等级 | 职责 |
 |------|------|------|
-| 🛡️ **Guard** | LV5 | 安全守护：传感器阈值监控、实验室异常报警、心跳检测 |
-| 🗺️ **Mapper** | LV3 | STM成像专家：扫描参数优化、图像质量评分、漂移矫正 |
-| 🔍 **Discovery** | LV4 | 异常猎手：相变检测、拓扑信号识别、patch-clamp触发 |
+| 🛡️ **Guard** | LV5 | 传感器专用 |
+| 🗺️ **Mapper** | LV3 | 设备专家 |
+| 🔍 **Discovery** | LV4 | 自检及任务输出检查 |
 | 🧭 **Orchestrator** | LV5 | 中央控制：任务DAG分解、资源仲裁、实验序列编排 |
 | 💻 **Compute** | LV2 | 超算调度：Slurm作业管理、vLLM推理、DFT计算对齐 |
 
-千个 Agent 通过 **WAP (Westlake Agent Protocol)** 实时通讯，形成蜂群智能。
+ 各Agent 通过 **WAP** 实时通讯，形成蜂群智能。
 
 ---
 
@@ -104,9 +71,9 @@ westlake-singularity/
 ├── agents/         # Agent系统
 │   ├── roles/      # 角色定义
 │   ├── protocols/  # 通讯协议
-│   └── wap/        # Westlake Agent Protocol
+│   └── wap/        # 安全协议
 ├── perception/     # 感知层 (vision/audio/LiDAR)
-├── tools/          # 工具层 (STM/DFT/硬件)
+├── tools/          # 工具层 
 ├── compute/        # 超算集成 (Slurm/vLLM)
 ├── memory/         # 记忆宫殿 (向量DB/RAG)
 ├── bus/            # 事件总线 (WebSocket/设备)
@@ -121,8 +88,8 @@ westlake-singularity/
 | 角色 | 姓名 | 单位 |
 |------|------|------|
 | 🎓 博士生 | **丛家祥** (Jiaxiang Cong) | 西湖大学 · 物理系 |
-| 👨‍🏫 PI | **孔令元** 博士 | 西湖大学 · 凝聚态物理 |
-| 🤖 AI Partner | **Jupiter** (木星) | Westlake Singularity 中控Agent |
+| 👨‍🏫 PI | **孔令元** 博士 | 西湖大学 · 物理系 |
+| 🤖 AI Partner | **Jupiter** (木星) | Lab Agent |
 
 ---
 
