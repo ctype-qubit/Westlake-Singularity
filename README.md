@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>AI-Native Quantum Laboratory Operating System</strong><br>
-  <em>西湖大学 · AI量子实验室操作系统</em>
+
 </p>
 
 <p align="center">
