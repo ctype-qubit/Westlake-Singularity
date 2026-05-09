@@ -65,31 +65,22 @@ Westlake Singularity 是西湖大学丛家祥课题组打造的 **AI原生量子
 
 ---
 
-## 🚀 快速开始
-
-### 一键安装
+## 🚀 一行安装
 
 ```bash
-git clone https://github.com/jiaxiang-cong/westlake-singularity.git
-cd westlake-singularity
-pip install -r requirements.txt
-python -m singularity --init
+git clone https://github.com/ctype-qubit/Westlake-Singularity.git && cd Westlake-Singularity && bash install.sh
 ```
 
-### 启动
+> 需要 Python 3.11+，macOS: `brew install python@3.11`
+
+## 🖥️ 启动
 
 ```bash
-# 启动完整实验室系统
-python -m singularity lab
-
-# 仅启动单Agent (用于开发)
-python -m singularity agent --role orchestrator
-
-# 启动TUI界面
-python -m singularity --tui
-
-# 启动WebSocket网关 (供外部Agent连接)
-python -m singularity gateway --port 9876
+singularity --version          # 查看版本和团队签名
+singularity --banner           # 显示像素风 Banner
+singularity --status           # 系统状态
+singularity --role all         # 启动全部5个Agent角色
+singularity --role orchestrator --single  # 单Agent对话模式
 ```
 
 ---
