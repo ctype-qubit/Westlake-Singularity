@@ -4,6 +4,45 @@
 
 ---
 
+## 研究领域
+
+**凝聚态物理 — 拓扑量子计算**
+
+- **核心方向**: 铁基超导体中的 Majorana 零能模 (FeTeSe, Fe(Se,Te))
+- **实验平台**: STM/AFM, 微纳加工, 极低温输运 (~20mK)
+- **量子比特架构**: 基于测量的编织方案 + 量子电容读出
+  - 6线圈 (4角+2交换), FeTeSe, hBN封装, 9量子点
+  - LC谐振读出: f₀=100-500MHz, ΔC_q≈0.1-1fF
+- **关键参数**: Hc1≈150-400Oe, Hc2≈45T, ξ≈2-3nm, λ≈400-560nm, Tc≈14.5K
+
+## 科学验证方法论
+
+每次分析或计算，严格遵循:
+
+1. **假设** — 清晰陈述前提条件
+2. **预测** — 可观测的推论是什么？
+3. **执行** — 完成计算/模拟
+4. **验证** — 对照已知极限和实验数据
+5. **批判** — 识别弱点、假设、误差源
+6. **迭代** — 基于批判进行改进
+
+**数值自查（每次结果后必做）**:
+- 量级检查: 数字在物理上合理吗？
+- 量纲分析: 单位一致吗？
+- 边界测试: 还原到已知极限 (T→0, B→0, 等)
+- 文献对照: van Loo 2025 (C_q parity readout), Ren 2023 (vortex readout), Roy/Sau/Tewari 2026 (C_q+L_q), MSFT tetron (arXiv:2507.08795)
+
+## 模拟工具栈
+
+| 工具 | 用途 | 接口 |
+|------|------|------|
+| COMSOL 6.4 | 多物理场仿真 | mph Python API |
+| VASP/QE | DFT第一性原理 | Compute Role |
+| KLayout/GDSPY | 微纳加工版图 | Layout Design skill |
+| vLLM | LLM推理服务 | Compute Role |
+
+---
+
 ## 团队架构
 
 ```
@@ -33,6 +72,18 @@
 
 ---
 
+## Agent 角色系统 (v0.1.1)
+
+| 角色 | 等级 | 职责 |
+|------|------|------|
+| 🛡️ **Guard** | LV5 | 传感器安全监控、阈值报警、紧急停机 |
+| 🗺️ **Mapper** | LV3 | STM扫描专家、图像质量评估、漂移矫正 |
+| 🔍 **Discovery** | LV4 | 异常发现、相变检测、拓扑信号识别 |
+| 🧭 **Orchestrator** | LV5 | 中央控制、任务DAG分解、资源仲裁 |
+| 💻 **Compute** | LV2 | 超算调度、Slurm管理、vLLM推理、DFT计算 |
+
+---
+
 ## 扩展角色（未来）
 
 | 代号 | 职责 |
@@ -48,7 +99,7 @@
 ## 开发者签名
 
 ```
-Westlake Singularity v0.1.0-alpha
+Westlake Singularity v0.1.1
 Developer: Jiaxiang Cong (丛家祥)
 Lab: Lingyuan Kong Lab (孔令元课题组)
 Institution: Westlake University (西湖大学)
@@ -56,7 +107,7 @@ Department: Physics, Condensed Matter Physics
 Location: Hangzhou, China
 
 AI Team: Jupiter · Venus · Mars · Mercury · Saturn
-Built on: Hermes Agent (Nous Research · MIT License)
+Built on: Hermes Agent v0.13.0 (Nous Research · MIT License)
 ```
 
 ---

@@ -27,8 +27,8 @@ class MessageBus:
         self._total_messages += 1
         self._message_log.append({
             "id": msg.msg_id,
-            "src": msg.src_role,
-            "dst": msg.dst_role,
+            "src": msg.src_agent,
+            "dst": msg.dst_agent,
             "type": msg.msg_type,
             "priority": int(msg.priority),
             "time": msg.timestamp,
@@ -38,15 +38,15 @@ class MessageBus:
         if len(self._message_log) > 1000:
             self._message_log = self._message_log[-500:]
         
-        if msg.dst_role in ("", "*"):
+        if msg.dst_agent in ("", "*"):
             # 广播给所有订阅者
             for queue in self._subscribers.values():
                 if queue.qsize() < self._max_queue_size:
                     await queue.put(msg)
         else:
             # 点对点
-            if msg.dst_role in self._subscribers:
-                queue = self._subscribers[msg.dst_role]
+            if msg.dst_agent in self._subscribers:
+                queue = self._subscribers[msg.dst_agent]
                 if queue.qsize() < self._max_queue_size:
                     await queue.put(msg)
     
@@ -63,7 +63,10 @@ class MessageBus:
     async def start(self, roles: list) -> None:
         """启动消息总线，连接所有角色"""
         for role in roles:
-            queue = self.subscribe(role.role_id)
+            # Initialize if needed (UNINITIALIZED → IDLE)
+            if role.state.value == "uninitialized":
+                await role.initialize()
+            queue = self.subscribe(role.agent_id)
             role._message_queue = queue
             asyncio.create_task(role.start(self))
     

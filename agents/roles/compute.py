@@ -64,8 +64,8 @@ class ComputeRole(BaseRole):
                 "submitted_at": msg.timestamp,
             }
             return AgentMessage(
-                src_role=self.role_id,
-                dst_role=msg.src_role,
+                src_agent=self.agent_id,
+                dst_agent=msg.src_agent,
                 msg_type="job_submitted",
                 payload={"job_id": job_id, "status": "PENDING"},
             )
@@ -74,7 +74,7 @@ class ComputeRole(BaseRole):
             job_id = msg.payload.get("job_id", "")
             job = self.active_jobs.get(job_id, {})
             return AgentMessage(
-                src_role=self.role_id,
+                src_agent=self.agent_id,
                 msg_type="job_status",
                 payload={"job_id": job_id, "status": job.get("status", "UNKNOWN")},
             )
@@ -82,7 +82,7 @@ class ComputeRole(BaseRole):
         elif action == "start_vllm":
             self.vllm_status = "running"
             return AgentMessage(
-                src_role=self.role_id,
+                src_agent=self.agent_id,
                 msg_type="vllm_status",
                 payload={"status": "running", "model": msg.payload.get("model", "default")},
             )
@@ -99,8 +99,8 @@ class ComputeRole(BaseRole):
             "params": params,
         }
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role=msg.src_role,
+            src_agent=self.agent_id,
+            dst_agent=msg.src_agent,
             msg_type="dft_queued",
             payload={"job_id": job_id, "status": "QUEUED"},
         )
@@ -109,8 +109,8 @@ class ComputeRole(BaseRole):
         """处理LLM推理请求"""
         prompt = msg.payload.get("prompt", "")
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role=msg.src_role,
+            src_agent=self.agent_id,
+            dst_agent=msg.src_agent,
             msg_type="inference_result",
             payload={
                 "model": msg.payload.get("model", "vllm_default"),

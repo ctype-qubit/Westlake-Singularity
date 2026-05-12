@@ -50,7 +50,7 @@ class GuardRole(BaseRole):
         if msg_type == "sensor_data":
             return await self._check_sensors(msg)
         elif msg_type == "heartbeat":
-            self._agent_heartbeats[msg.src_role] = msg.timestamp
+            self._agent_heartbeats[msg.src_agent] = msg.timestamp
             return None
         elif msg_type == "command":
             if msg.payload.get("action") == "emergency_stop":
@@ -78,8 +78,8 @@ class GuardRole(BaseRole):
             self._alert_count += 1
             is_critical = any("temperature" in a or "magnetic" in a for a in alerts)
             return AgentMessage(
-                src_role=self.role_id,
-                dst_role="Orchestrator",
+                src_agent=self.agent_id,
+                dst_agent="Orchestrator",
                 msg_type="alert",
                 priority=Priority.CRITICAL if is_critical else Priority.URGENT,
                 payload={
@@ -93,8 +93,8 @@ class GuardRole(BaseRole):
     async def _emergency_stop(self, msg: AgentMessage) -> AgentMessage:
         """紧急停机"""
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="*",  # 广播给所有Agent
+            src_agent=self.agent_id,
+            dst_agent="*",  # 广播给所有Agent
             msg_type="alert",
             priority=Priority.CRITICAL,
             payload={
@@ -111,8 +111,8 @@ class GuardRole(BaseRole):
             if (msg := last_hb) and (time := __import__("time").time()) - msg > 15
         ]
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="Orchestrator",
+            src_agent=self.agent_id,
+            dst_agent="Orchestrator",
             msg_type="status",
             priority=Priority.NORMAL,
             payload={

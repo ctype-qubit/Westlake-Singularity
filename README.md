@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="#"><img src="https://img.shields.io/badge/version-0.1.0--alpha-gold.svg" alt="Version"></a>
+  <a href="#"><img src="https://img.shields.io/badge/version-0.1.1-blue.svg" alt="Version"></a>
   <a href="#"><img src="https://img.shields.io/badge/python-3.11%2B-blue.svg" alt="Python"></a>
 </p>
 

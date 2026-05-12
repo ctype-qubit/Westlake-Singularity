@@ -11,7 +11,7 @@ import os
 from pathlib import Path
 
 # 将项目根目录加入Python路径
-PROJECT_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = Path(__file__).parent
 sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "hermes-base"))
 
@@ -23,7 +23,7 @@ def show_banner():
     except ImportError:
         print(r"""
 ╔══════════════════════════════════════════════════════╗
-║  ⚛  WESTLAKE SINGULARITY  v0.1.0-alpha              ║
+║  ⚛  WESTLAKE SINGULARITY  v0.1.1              ║
 ║  AI-Native Quantum Laboratory Operating System        ║
 ║                                                      ║
 ║  Developer: Jiaxiang Cong · Lingyuan Kong Lab        ║
@@ -126,10 +126,10 @@ def main():
     args = parser.parse_args()
     
     if args.version:
-        print("Westlake Singularity v0.1.0-alpha")
+        print("Westlake Singularity v0.1.1")
         print("Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University")
         print("Team: Jupiter(木星) Venus(金星) Mars(火星) Mercury(水星) Saturn(土星)")
-        print("Based on: Hermes Agent v0.12.0 (Nous Research, MIT License)")
+        print("Based on: Hermes Agent v0.13.0 (Nous Research, MIT License)")
         return 0
     
     if args.banner:

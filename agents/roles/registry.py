@@ -32,11 +32,11 @@ class RoleRegistry:
             raise ValueError(f"Unknown role: {role_name}. Available: {list(self._roles.keys())}")
         
         instance = self._roles[role_name](**kwargs)
-        self._instances[instance.role_id] = instance
+        self._instances[instance.agent_id] = instance
         return instance
     
-    def get(self, role_id: str) -> Optional[BaseRole]:
-        return self._instances.get(role_id)
+    def get(self, agent_id: str) -> Optional[BaseRole]:
+        return self._instances.get(agent_id)
     
     def list_roles(self) -> list[str]:
         return list(self._roles.keys())

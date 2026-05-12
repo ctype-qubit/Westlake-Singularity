@@ -68,8 +68,8 @@ class MapperRole(BaseRole):
         self.last_quality_score = quality
         
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="Discovery",
+            src_agent=self.agent_id,
+            dst_agent="Discovery",
             msg_type="scan_result",
             priority=Priority.NORMAL,
             payload={
@@ -93,8 +93,8 @@ class MapperRole(BaseRole):
             self.params["bias_V"] = feedback["suggested_bias_V"]
         
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="Orchestrator",
+            src_agent=self.agent_id,
+            dst_agent="Orchestrator",
             msg_type="params_updated",
             priority=Priority.NORMAL,
             payload={"new_params": dict(self.params)},

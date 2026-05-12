@@ -12,7 +12,7 @@ def show_banner():
         from branding.banner import show_banner
         show_banner(big=True)
     except ImportError:
-        print("⚛  Westlake Singularity v0.1.0-alpha")
+        print("⚛  Westlake Singularity v0.1.1")
         print("   Developer: Jiaxiang Cong · Lingyuan Kong Lab")
         print("   Westlake University")
 
@@ -41,12 +41,12 @@ async def start_lab(role: str = "orchestrator"):
         for r_name, (cls_name, kwargs) in roles_map.items():
             inst = registry.create(cls_name.replace("Role", ""), **kwargs)
             instances.append(inst)
-            print(f"  ✓ {r_name}: {inst.role_id}")
+            print(f"  ✓ {r_name}: {inst.agent_id}")
         await bus.start(instances)
     else:
         cls_name, kwargs = roles_map.get(role, roles_map["orchestrator"])
         inst = registry.create(cls_name.replace("Role", ""), **kwargs)
-        print(f"  ✓ {role}: {inst.role_id}")
+        print(f"  ✓ {role}: {inst.agent_id}")
         await bus.start([inst])
     
     print(f"\n  All systems ready. WebSocket: ws://0.0.0.0:9876")
@@ -72,7 +72,7 @@ def main():
     args = parser.parse_args()
     
     if args.version:
-        print("Westlake Singularity v0.1.0-alpha")
+        print("Westlake Singularity v0.1.1")
         print("Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University")
         print("Team: Jupiter · Venus · Mars · Mercury · Saturn")
         sys.exit(0)

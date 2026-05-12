@@ -9,9 +9,9 @@ from .integration import (
     SingularityAgentWrapper, SINGULARITY_BRAND,
 )
 
-__version__ = "0.1.0-alpha"
+__version__ = "0.1.1"
 __author__ = "Jiaxiang Cong"
 __lab__ = "Lingyuan Kong Lab"
 __institution__ = "Westlake University"
-__based_on__ = "Hermes Agent v0.12.0 (Nous Research, MIT License)"
+__based_on__ = "Hermes Agent v0.12.0 → v0.13.0"
 __team__ = ["Jupiter", "Venus", "Mars", "Mercury", "Saturn"]

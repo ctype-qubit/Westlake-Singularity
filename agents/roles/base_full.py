@@ -276,8 +276,12 @@ class BaseRole(ABC):
         """主消息处理循环"""
         while self._running:
             try:
-                # 从收件箱取消息
-                msg = await asyncio.wait_for(self._inbox.get(), timeout=1.0)
+                # 从收件箱取消息 (PriorityQueue returns (priority, timestamp, msg) tuple)
+                raw = await asyncio.wait_for(self._inbox.get(), timeout=1.0)
+                if isinstance(raw, (tuple, list)) and len(raw) >= 3:
+                    _, _, msg = raw  # unpack priority queue tuple
+                else:
+                    msg = raw
                 self._stats["messages_received"] += 1
                 
                 await self.transition_to(RoleState.PROCESSING)

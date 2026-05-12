@@ -70,8 +70,8 @@ class DiscoveryRole(BaseRole):
         
         # 通知Orchestrator
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="Orchestrator",
+            src_agent=self.agent_id,
+            dst_agent="Orchestrator",
             msg_type="discovery",
             priority=Priority.IMPORTANT,
             payload=discovery,
@@ -99,8 +99,8 @@ class DiscoveryRole(BaseRole):
         action = msg.payload.get("action", "")
         if action == "discovery_report":
             return AgentMessage(
-                src_role=self.role_id,
-                dst_role="Orchestrator",
+                src_agent=self.agent_id,
+                dst_agent="Orchestrator",
                 msg_type="report",
                 payload={
                     "total_discoveries": len(self.discoveries),

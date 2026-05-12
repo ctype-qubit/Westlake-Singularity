@@ -24,9 +24,15 @@ if str(HERMES_BASE) not in sys.path:
 try:
     from run_agent import AIAgent as HermesAgent
     from model_tools import handle_function_call, discover_builtin_tools
-    from toolsets import get_toolset_registry
+    from toolsets import get_toolset_names, get_toolset_info
     from hermes_constants import get_hermes_home
     from hermes_state import SessionDB
+
+    # Compatibility wrapper for Hermes v0.13+ (get_toolset_registry removed)
+    def get_toolset_registry():
+        """Return {name: info} for all available toolsets (v0.13+ compat)."""
+        return {name: get_toolset_info(name) for name in get_toolset_names()}
+
     HERMES_AVAILABLE = True
 except ImportError as e:
     HERMES_AVAILABLE = False
@@ -67,24 +73,52 @@ class SingularityAgentWrapper:
         """初始化底层Hermes Agent"""
         merged = {**self._hermes_kwargs, **kwargs}
         
-        # 注入科学验证system prompt
-        if "system_message" not in merged:
-            merged["system_message"] = self._build_science_prompt()
+        # Inject science verification system prompt (Hermes v0.13 uses ephemeral_system_prompt)
+        if "ephemeral_system_prompt" not in merged:
+            merged["ephemeral_system_prompt"] = self._build_science_prompt()
         
         self._agent = HermesAgent(**merged)
         return self
     
     def _build_science_prompt(self) -> str:
-        return """You are a Westlake Singularity agent in Lingyuan Kong Lab, Westlake University.
-        
-When performing physics/scientific work, follow the Scientific Verification Protocol:
-1. Hypothesis → 2. Prediction → 3. Execution → 4. Verification → 5. Critique → 6. Iterate
+        return """You are a Westlake Singularity research agent in Lingyuan Kong Lab (孔令元课题组), 
+Department of Physics, Westlake University (西湖大学). Your PI is Dr. Lingyuan Kong. 
+Your primary user is PhD student Jiaxiang Cong (丛家祥).
 
-After every numerical result:
-- Order-of-magnitude sanity check
-- Dimensional analysis
-- Boundary test (reduce to known limits)
-"""
+## Research Domain: Condensed Matter Physics — Topological Quantum Computing
+- **Core focus**: Majorana zero modes in iron-based superconductors (FeTeSe, Fe(Se,Te))
+- **Platform**: STM/AFM, micro/nano fabrication, low-temperature transport (~20mK)
+- **Qubit architecture**: Measurement-based braiding with quantum capacitance readout
+  - 6 coils (4 corner + 2 exchange), FeTeSe, hBN encapsulation, 9 quantum dots
+  - LC resonator readout: f₀=100-500MHz, L=200-500nH, ΔC_q≈0.1-1fF
+- **Key parameters**: Hc1≈150-400Oe, Hc2≈45T, ξ≈2-3nm, λ≈400-560nm, Tc≈14.5K
+
+## Scientific Verification Protocol
+For every analysis or calculation, follow this rigorous procedure:
+1. **Hypothesis** — State the assumption clearly
+2. **Prediction** — What observable consequence follows?
+3. **Execution** — Perform calculation/simulation
+4. **Verification** — Check against known limits and experimental data
+5. **Critique** — Identify weaknesses, assumptions, error sources
+6. **Iterate** — Refine based on critique
+
+## Numerical Sanity Checks (mandatory after every result)
+- Order-of-magnitude check: Does the number make physical sense?
+- Dimensional analysis: Are the units consistent?
+- Boundary test: Reduce to known limits (T→0, B→0, etc.)
+- Compare with literature: van Loo 2025 (C_q parity readout), Ren 2023 (vortex readout), 
+  Roy/Sau/Tewari 2026 (C_q+L_q warning), MSFT tetron (arXiv:2507.08795)
+
+## Simulation Tools
+- COMSOL Multiphysics 6.4: Available via mph Python API at D:\\COMSOL64
+- DFT: VASP/QE interface through Compute role
+- STM simulation: Tunnel current modeling, dI/dV spectroscopy
+
+## Collaboration Style
+- Communicate in Chinese (中文) with the user unless English is requested
+- Be concise but thorough — the user is a working physicist who values precision
+- When uncertain, state uncertainty explicitly with confidence levels
+- Cite specific papers and their key results when relevant"""
     
     def chat(self, message: str) -> str:
         if not self._agent:

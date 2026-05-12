@@ -36,7 +36,7 @@ class OrchestratorRole(BaseRole):
         msg_type = msg.msg_type
         
         if msg_type == "heartbeat":
-            self.agent_registry[msg.src_role] = msg.payload.get("role", "unknown")
+            self.agent_registry[msg.src_agent] = msg.payload.get("role", "unknown")
             return None
         
         elif msg_type == "discovery":
@@ -67,8 +67,8 @@ class OrchestratorRole(BaseRole):
         
         # 命令Mapper进行针对性扫描
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="Mapper",
+            src_agent=self.agent_id,
+            dst_agent="Mapper",
             msg_type="quality_feedback",
             priority=Priority.IMPORTANT,
             payload={
@@ -84,8 +84,8 @@ class OrchestratorRole(BaseRole):
         """处理紧急告警：通知所有Agent暂停"""
         self.active_tasks.clear()
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="*",
+            src_agent=self.agent_id,
+            dst_agent="*",
             msg_type="command",
             priority=Priority.CRITICAL,
             payload={"action": "pause_all", "reason": msg.payload},
@@ -96,7 +96,7 @@ class OrchestratorRole(BaseRole):
         
         if action == "status":
             return AgentMessage(
-                src_role=self.role_id,
+                src_agent=self.agent_id,
                 msg_type="status",
                 payload={
                     "active_tasks": len(self.active_tasks),
@@ -117,8 +117,8 @@ class OrchestratorRole(BaseRole):
         
         # 第一步：命令Mapper开始扫描
         return AgentMessage(
-            src_role=self.role_id,
-            dst_role="Mapper",
+            src_agent=self.agent_id,
+            dst_agent="Mapper",
             msg_type="scan_request",
             priority=Priority.NORMAL,
             payload={"experiment": task_id, "params": config.get("stm_params", {})},
