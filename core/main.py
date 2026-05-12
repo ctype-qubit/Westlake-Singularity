@@ -12,7 +12,7 @@ def show_banner():
         from branding.banner import show_banner
         show_banner(big=True)
     except ImportError:
-        print("⚛  Westlake Singularity v0.1.1")
+        print("⚛  Westlake Singularity v0.1.2")
         print("   Developer: Jiaxiang Cong · Lingyuan Kong Lab")
         print("   Westlake University")
 
@@ -72,7 +72,7 @@ def main():
     args = parser.parse_args()
     
     if args.version:
-        print("Westlake Singularity v0.1.1")
+        print("Westlake Singularity v0.1.2")
         print("Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University")
         print("Team: Jupiter · Venus · Mars · Mercury · Saturn")
         sys.exit(0)

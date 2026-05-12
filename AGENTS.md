@@ -4,17 +4,6 @@
 
 ---
 
-## 研究领域
-
-**凝聚态物理 — 拓扑量子计算**
-
-- **核心方向**: 铁基超导体中的 Majorana 零能模 (FeTeSe, Fe(Se,Te))
-- **实验平台**: STM/AFM, 微纳加工, 极低温输运 (~20mK)
-- **量子比特架构**: 基于测量的编织方案 + 量子电容读出
-  - 6线圈 (4角+2交换), FeTeSe, hBN封装, 9量子点
-  - LC谐振读出: f₀=100-500MHz, ΔC_q≈0.1-1fF
-- **关键参数**: Hc1≈150-400Oe, Hc2≈45T, ξ≈2-3nm, λ≈400-560nm, Tc≈14.5K
-
 ## 科学验证方法论
 
 每次分析或计算，严格遵循:
@@ -29,8 +18,8 @@
 **数值自查（每次结果后必做）**:
 - 量级检查: 数字在物理上合理吗？
 - 量纲分析: 单位一致吗？
-- 边界测试: 还原到已知极限 (T→0, B→0, 等)
-- 文献对照: van Loo 2025 (C_q parity readout), Ren 2023 (vortex readout), Roy/Sau/Tewari 2026 (C_q+L_q), MSFT tetron (arXiv:2507.08795)
+- 边界测试: 还原到已知极限
+- 文献对照: 交叉验证已有成果
 
 ## 模拟工具栈
 
@@ -72,7 +61,7 @@
 
 ---
 
-## Agent 角色系统 (v0.1.1)
+## Agent 角色系统 (v0.1.2)
 
 | 角色 | 等级 | 职责 |
 |------|------|------|
@@ -99,7 +88,7 @@
 ## 开发者签名
 
 ```
-Westlake Singularity v0.1.1
+Westlake Singularity v0.1.2
 Developer: Jiaxiang Cong (丛家祥)
 Lab: Lingyuan Kong Lab (孔令元课题组)
 Institution: Westlake University (西湖大学)

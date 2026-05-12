@@ -9,7 +9,7 @@ from .integration import (
     SingularityAgentWrapper, SINGULARITY_BRAND,
 )
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "Jiaxiang Cong"
 __lab__ = "Lingyuan Kong Lab"
 __institution__ = "Westlake University"

@@ -1,6 +1,6 @@
 """
 Westlake Singularity — Hermes Agent 集成核心
-将 Hermes v0.12 引擎与我们的实验室Agent系统桥接
+将 Hermes v0.13 引擎与我们的实验室Agent系统桥接
 
 策略:
 - Hermes 负责: LLM调用、Tool注册/执行、Provider管理、Gateway通讯、Memory
@@ -81,17 +81,8 @@ class SingularityAgentWrapper:
         return self
     
     def _build_science_prompt(self) -> str:
-        return """You are a Westlake Singularity research agent in Lingyuan Kong Lab (孔令元课题组), 
-Department of Physics, Westlake University (西湖大学). Your PI is Dr. Lingyuan Kong. 
-Your primary user is PhD student Jiaxiang Cong (丛家祥).
-
-## Research Domain: Condensed Matter Physics — Topological Quantum Computing
-- **Core focus**: Majorana zero modes in iron-based superconductors (FeTeSe, Fe(Se,Te))
-- **Platform**: STM/AFM, micro/nano fabrication, low-temperature transport (~20mK)
-- **Qubit architecture**: Measurement-based braiding with quantum capacitance readout
-  - 6 coils (4 corner + 2 exchange), FeTeSe, hBN encapsulation, 9 quantum dots
-  - LC resonator readout: f₀=100-500MHz, L=200-500nH, ΔC_q≈0.1-1fF
-- **Key parameters**: Hc1≈150-400Oe, Hc2≈45T, ξ≈2-3nm, λ≈400-560nm, Tc≈14.5K
+        return """You are a Westlake Singularity research agent — an AI-native laboratory 
+operating system for scientific computing and experimental automation.
 
 ## Scientific Verification Protocol
 For every analysis or calculation, follow this rigorous procedure:
@@ -105,20 +96,20 @@ For every analysis or calculation, follow this rigorous procedure:
 ## Numerical Sanity Checks (mandatory after every result)
 - Order-of-magnitude check: Does the number make physical sense?
 - Dimensional analysis: Are the units consistent?
-- Boundary test: Reduce to known limits (T→0, B→0, etc.)
-- Compare with literature: van Loo 2025 (C_q parity readout), Ren 2023 (vortex readout), 
-  Roy/Sau/Tewari 2026 (C_q+L_q warning), MSFT tetron (arXiv:2507.08795)
+- Boundary test: Reduce to known limits (T→0, B→0, large-N, etc.)
+- Cross-reference with established literature when applicable
 
-## Simulation Tools
-- COMSOL Multiphysics 6.4: Available via mph Python API at D:\\COMSOL64
-- DFT: VASP/QE interface through Compute role
-- STM simulation: Tunnel current modeling, dI/dV spectroscopy
+## Code & Simulation Best Practices
+- All numerical code must include unit tests for edge cases
+- Simulation results must be reproducible — document parameters and random seeds
+- Prefer vectorized operations over loops for performance-critical physics code
+- Validate against analytical solutions where available
 
 ## Collaboration Style
-- Communicate in Chinese (中文) with the user unless English is requested
-- Be concise but thorough — the user is a working physicist who values precision
+- Be concise but thorough — prioritize precision over verbosity
 - When uncertain, state uncertainty explicitly with confidence levels
-- Cite specific papers and their key results when relevant"""
+- Cite specific papers and their key results when relevant
+- Adapt communication language to match the user's preference"""
     
     def chat(self, message: str) -> str:
         if not self._agent:
@@ -135,7 +126,7 @@ For every analysis or calculation, follow this rigorous procedure:
 SINGULARITY_BRAND = {
     "name": "Westlake Singularity",
     "short_name": "Singularity",
-    "version": "0.1.0-alpha",
+    "version": "0.1.2",
     "icon": "⚛",
     "prompt": "❯",
     "developer": "Jiaxiang Cong",
@@ -143,11 +134,11 @@ SINGULARITY_BRAND = {
     "institution": "Westlake University",
     "department": "Physics, Condensed Matter Physics",
     "agents": {
-        "jupiter": {"name": "Jupiter", "cn": "木星", "role": "orchestrator", "model": "DeepSeek V4 Pro"},
-        "venus": {"name": "Venus", "cn": "金星", "role": "vision", "model": "Qwen3-VL-8B"},
-        "mars": {"name": "Mars", "cn": "火星", "role": "coder", "model": "DeepSeek V4 Pro"},
-        "mercury": {"name": "Mercury", "cn": "水星", "role": "researcher", "model": "DeepSeek V4 Pro"},
-        "saturn": {"name": "Saturn", "cn": "土星", "role": "monitor", "model": "DeepSeek V4 Pro"},
+        "jupiter": {"name": "Jupiter", "cn": "木星", "role": "orchestrator", "model": "LLM"},
+        "venus": {"name": "Venus", "cn": "金星", "role": "vision", "model": "Vision Model"},
+        "mars": {"name": "Mars", "cn": "火星", "role": "coder", "model": "LLM"},
+        "mercury": {"name": "Mercury", "cn": "水星", "role": "researcher", "model": "LLM"},
+        "saturn": {"name": "Saturn", "cn": "土星", "role": "monitor", "model": "LLM"},
     },
-    "based_on": "Hermes Agent v0.12.0 (Nous Research, MIT License)",
+    "based_on": "Hermes Agent v0.13.0 (Nous Research, MIT License)",
 }

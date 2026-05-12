@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="westlake-singularity",
-    version="0.1.0-alpha",
+    version="0.1.2",
     author="Jiaxiang Cong",
     author_email="congjiaxiang@westlake.edu.cn",
     description="AI-Native Quantum Laboratory Operating System — 西湖大学AI量子实验室",
