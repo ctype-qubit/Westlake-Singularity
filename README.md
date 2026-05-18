@@ -87,9 +87,9 @@ westlake-singularity/
 
 | 角色 | 姓名 | 单位 |
 |------|------|------|
-| 🎓 博士生 | **Westlake Singularity Team** (Westlake Singularity) | Westlake University |
-| 👨‍🏫 PI | **Westlake Singularity PI** 博士 | Westlake University |
-| 🤖 AI Partner | **Jupiter** (木星) | Lab Agent |
+| 🎓 Developer  | 丛家祥 | Westlake University |
+| 👨‍🏫 PI | 孔令元博士 | Westlake University |
+| 🤖 AI Partner | **Jupiter team** | Lab Agent |
 
 ---
 
