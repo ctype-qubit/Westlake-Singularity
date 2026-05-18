@@ -1,6 +1,6 @@
 """ComputeRole — 超算调度Agent
 Slurm作业管理、vLLM推理、DFT计算对齐
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

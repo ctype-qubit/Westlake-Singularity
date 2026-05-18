@@ -1,6 +1,6 @@
 """MapperRole — STM成像专家Agent
 扫描参数优化、图像质量评分、漂移矫正、特征提取
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

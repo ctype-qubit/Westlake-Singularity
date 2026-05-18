@@ -1,0 +1,40 @@
+{# Codex (OpenAI) platform adapter template.
+   Generates a SKILL.md with Codex-specific frontmatter including
+   metadata.short-description. Also requires a companion agents/openai.yaml
+   file generated from the openai_yaml block below. #}
+---
+name: {{ skill_name }}
+description: >
+  {{ description }}
+{% if short_description %}
+metadata:
+  short-description: {{ short_description }}
+{% endif %}
+---
+
+{{ skill_body }}
+
+{# Companion file: agents/openai.yaml
+   This must be generated as a separate file alongside the SKILL.md:
+
+interface:
+  display_name: "{{ display_name | default(skill_name | replace('-', ' ') | title, true) }}"
+  short_description: "{{ short_description | default(description[:80], true) }}"
+{% if icon_small %}
+  icon_small: "{{ icon_small }}"
+{% endif %}
+{% if icon_large %}
+  icon_large: "{{ icon_large }}"
+{% endif %}
+  brand_color: "{{ brand_color | default('#2C3E50', true) }}"
+  default_prompt: "{{ default_prompt | default('Help me with ' + skill_name | replace('-', ' '), true) }}"
+
+dependencies:
+  tools:
+{% for tool in codex_tools | default(['bash', 'file_read', 'file_write'], true) %}
+    - {{ tool }}
+{% endfor %}
+
+policy:
+  allow_implicit_invocation: {{ allow_implicit | default(true, true) | lower }}
+#}

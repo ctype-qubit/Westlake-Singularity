@@ -1,7 +1,7 @@
 """
 Westlake Singularity — 帝国层管理器
 联邦学习、跨组知识迁移、科研外交
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 import json, logging, time
 from dataclasses import dataclass, field
@@ -88,6 +88,6 @@ class DiplomacyProtocol:
         return {"status": "ok", "agreement_id": aid}
 
 # Globals
-federation = FederationManager("westlake-konglab", "Lingyuan Kong Lab, Westlake University")
-knowledge_transfer = KnowledgeTransfer("westlake-konglab")
+federation = FederationManager("westlake-singularity", "Westlake University, Westlake University")
+knowledge_transfer = KnowledgeTransfer("westlake-singularity")
 diplomacy = DiplomacyProtocol()

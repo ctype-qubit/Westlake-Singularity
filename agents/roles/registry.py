@@ -1,6 +1,6 @@
 """RoleRegistry — Agent角色注册表
 管理所有已注册的Agent角色，支持动态发现和加载
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 from typing import Type, Optional

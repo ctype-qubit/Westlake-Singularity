@@ -1,0 +1,28 @@
+{# Claude Code platform adapter template.
+   Generates a SKILL.md with Claude Code-specific frontmatter including
+   hooks and allowed-tools in the YAML block. #}
+---
+name: {{ skill_name }}
+description: >
+  {{ description }}
+{% if allowed_tools %}
+allowed-tools:
+{% for tool in allowed_tools %}
+  - {{ tool }}
+{% endfor %}
+{% endif %}
+{% if hooks %}
+hooks:
+{% for event, command in hooks.items() %}
+  {{ event }}: {{ command }}
+{% endfor %}
+{% endif %}
+{% if metadata %}
+metadata:
+{% for key, value in metadata.items() %}
+  {{ key }}: "{{ value }}"
+{% endfor %}
+{% endif %}
+---
+
+{{ skill_body }}

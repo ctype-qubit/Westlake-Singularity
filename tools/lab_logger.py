@@ -1,6 +1,6 @@
 """LabLogger — 实验室日志工具
 自动记录所有Agent操作、实验结果、异常
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import json

@@ -1,6 +1,6 @@
 # 🚀 GitHub 上传指南
 
-## 开发者: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+## 开发者: Westlake Singularity · Westlake University
 
 ---
 
@@ -24,9 +24,9 @@ cd F:/westlake-singularity
 # 初始化 Git
 git init
 git add .
-git commit -m "🎉 Initial commit: Westlake Singularity v0.1.0-alpha
+git commit -m "🎉 Initial commit: Westlake Singularity v0.2.0-alpha
 
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 Team: Jupiter · Venus · Mars · Mercury · Saturn
 
 - Six-layer architecture (Perception→Control→Cognition→Federation→Digital Twin→Empire)
@@ -68,12 +68,12 @@ docker compose -f docker/docker-compose.yml up -d
 ## 第四步：发布 Release
 
 1. 在 GitHub 仓库页面点击 "Releases" → "Create a new release"
-2. Tag: `v0.1.0-alpha`
-3. Title: `Westlake Singularity v0.1.0-alpha — 西湖奇点初版`
+2. Tag: `v0.2.0-alpha`
+3. Title: `Westlake Singularity v0.2.0-alpha — 西湖奇点初版`
 4. 描述内容建议：
 
 ```
-## ⚛ Westlake Singularity v0.1.0-alpha
+## ⚛ Westlake Singularity v0.2.0-alpha
 
 首个公开版本。包含完整的六层架构骨架和五个Agent角色系统。
 
@@ -86,7 +86,7 @@ docker compose -f docker/docker-compose.yml up -d
 - 🐳 Docker Compose 多Agent一键部署
 
 ### 开发者
-Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Westlake Singularity · Westlake University
 AI Team: Jupiter (木星) · Venus (金星) · Mars (火星) · Mercury (水星) · Saturn (土星)
 ```
 
@@ -107,6 +107,6 @@ git push
 
 *记得先配置好 Git 用户名：*
 ```bash
-git config --global user.name "Jiaxiang Cong"
-git config --global user.email "congjiaxiang@westlake.edu.cn"
+git config --global user.name "Westlake Singularity User"
+git config --global user.email "singularity@westlake.edu.cn"
 ```

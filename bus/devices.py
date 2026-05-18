@@ -1,6 +1,6 @@
 """HardwareDevices — 硬件设备管理器
 AR/VR叠加、灯光、OLED屏幕、激光控制
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 class LightController:

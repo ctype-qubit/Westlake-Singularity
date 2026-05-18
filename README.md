@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="#"><img src="https://img.shields.io/badge/version-0.1.2-blue.svg" alt="Version"></a>
+  <a href="#"><img src="https://img.shields.io/badge/version-0.2.0-blue.svg" alt="Version"></a>
   <a href="#"><img src="https://img.shields.io/badge/python-3.11%2B-blue.svg" alt="Python"></a>
 </p>
 
@@ -87,8 +87,8 @@ westlake-singularity/
 
 | 角色 | 姓名 | 单位 |
 |------|------|------|
-| 🎓 博士生 | **丛家祥** (Jiaxiang Cong) | 西湖大学 · 物理系 |
-| 👨‍🏫 PI | **孔令元** 博士 | 西湖大学 · 物理系 |
+| 🎓 博士生 | **Westlake Singularity Team** (Westlake Singularity) | Westlake University |
+| 👨‍🏫 PI | **Westlake Singularity PI** 博士 | Westlake University |
 | 🤖 AI Partner | **Jupiter** (木星) | Lab Agent |
 
 ---
@@ -98,9 +98,9 @@ westlake-singularity/
 本项目基于 MIT 协议开源。基于 Nous Research 的 [Hermes Agent](https://github.com/NousResearch/hermes-agent) 框架（MIT License）。
 
 ```
-MIT License · Copyright (c) 2026 Jiaxiang Cong · Westlake University
+MIT License · Copyright (c) 2026 Westlake Singularity · Westlake University
 ```
 
 ---
 
-*"The laboratory itself becomes the scientist."* — 丛家祥, 2026
+*"The laboratory itself becomes the scientist."* — Westlake Singularity Team, 2026

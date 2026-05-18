@@ -1,6 +1,6 @@
 """GuardRole — 安全守护Agent
 监控传感器阈值、异常报警、心跳检测、实验室安全
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

@@ -1,6 +1,6 @@
 """OrchestratorRole — 中央控制Agent
 任务DAG分解、资源仲裁、实验序列编排、跨Agent协调
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

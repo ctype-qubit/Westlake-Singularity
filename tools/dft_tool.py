@@ -1,6 +1,6 @@
 """DFTTool — DFT计算工具 (VASP/QE接口)
 输入文件生成、作业提交、结果解析
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 from dataclasses import dataclass, field

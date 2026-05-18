@@ -1,7 +1,7 @@
 """
 Westlake Singularity — 超算集成层
 Slurm作业编排 + vLLM模型管理 + 资源调度
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

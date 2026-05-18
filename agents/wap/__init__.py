@@ -1,5 +1,5 @@
 """WAP — Westlake Agent Protocol
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 from .protocol import (
     WAPMessage,

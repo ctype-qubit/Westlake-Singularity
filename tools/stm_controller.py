@@ -1,7 +1,7 @@
 """
 Westlake Singularity — STM/Nanonis gRPC 完整客户端
 支持: Nanonis Tramea, Nanonis Mimea, Specs JT-STM
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

@@ -1,7 +1,7 @@
 """
 Westlake Singularity — 帝国层
 联邦学习 + 跨组知识迁移 + 科研外交
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 from .manager import (
     FederationManager, FederatedModel,

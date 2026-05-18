@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "westlake-singularity"
-version = "0.1.2"
+version = "0.2.0"
 description = "AI-Native Quantum Laboratory Operating System — 西湖大学AI量子实验室"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Jiaxiang Cong", email = "congjiaxiang@westlake.edu.cn"},
+    {name = "Jiaxiang Cong", email = "singularity@westlake.edu.cn"},
 ]
 maintainers = [
-    {name = "Lingyuan Kong Lab, Westlake University"},
+    {name = "Westlake University, Westlake University"},
 ]
 requires-python = ">=3.11"
 classifiers = [

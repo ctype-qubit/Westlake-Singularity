@@ -49,7 +49,7 @@ BANNER_SMALL = r"""
 {gold}   ▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐
 {gold}   ▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐  {dim}Westlake Singularity
 {gold}   ▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐
-{gold}   ▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐  {dim}v0.1.0 — AI-Native Quantum Lab
+{gold}   ▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐▐▌   ▐  {dim}v0.2.0 — AI-Native Quantum Lab
 {gold}    ▀     ▀     ▀     ▀     ▀     ▀{reset}
 """.format(
     cyan=Colors.CYAN, gold=Colors.GOLD, white=Colors.WHITE,
@@ -62,10 +62,10 @@ BANNER_BIG = r"""
 ╚╩╝└─┘└─┘ ┴ ┴─┘┴ ┴┴ ┴└─┘  ╚═╝┴┘└┘└─┘└─┘┴─┘┴ ┴┴└─┴ ┴ ┴ 
 {gold}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   {white}AI-Native Quantum Laboratory Operating System
-  {dim}西湖大学 · 丛家祥 · 孔令元课题组
-    {dim}Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+  {dim}西湖大学 · Westlake University
+    {dim}Developer: Westlake Singularity Contributors
     Agents: Jupiter(木星) Venus(金星) Mars(火星) Mercury(水星) Saturn(土星)
-    MIT License · v0.1.0-alpha · Build 2026
+    MIT License · v0.2.0-alpha · Build 2026
 {reset}""".format(
     cyan=Colors.CYAN, gold=Colors.GOLD, white=Colors.WHITE,
     dim=Colors.DIM, reset=Colors.RESET
@@ -82,7 +82,7 @@ def show_banner(big=False):
 
 def show_minimal():
     """精简版（用于CLI启动）"""
-    print(f"{Colors.CYAN}{Colors.BOLD}⚛ Westlake Singularity{Colors.RESET} {Colors.DIM}v0.1.0{Colors.RESET}")
+    print(f"{Colors.CYAN}{Colors.BOLD}⚛ Westlake Singularity{Colors.RESET} {Colors.DIM}v0.2.0{Colors.RESET}")
     print(f"{Colors.DIM}  西湖大学 AI量子实验室操作系统{Colors.RESET}")
 
 

@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "skill_name": "{{ skill_name }}",
+  "test_cases": [
+{% for tc in test_cases %}
+    {
+      "id": "{{ tc.id }}",
+      "name": "{{ tc.name }}",
+      "prompt": "{{ tc.prompt }}",
+      "context": {
+        "files": {{ tc.context_files | default("{}", true) | tojson }},
+        "env": {{ tc.context_env | default("{}", true) | tojson }}
+      },
+      "assertions": [
+{% for assertion in tc.assertions %}
+        {
+          "type": "{{ assertion.type }}",
+          "target": "{{ assertion.target }}",
+          "value": "{{ assertion.value }}",
+          "weight": {{ assertion.weight | default(1.0, true) }}
+        }{% if not loop.last %},{% endif %}
+
+{% endfor %}
+      ],
+      "expected_behavior": "{{ tc.expected_behavior }}",
+      "tags": {{ tc.tags | default([], true) | tojson }}
+    }{% if not loop.last %},{% endif %}
+
+{% endfor %}
+  ]
+}

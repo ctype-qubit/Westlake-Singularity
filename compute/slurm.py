@@ -1,5 +1,5 @@
 """SlurmTool — Slurm作业调度
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import subprocess

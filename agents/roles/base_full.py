@@ -1,7 +1,7 @@
 """
 Westlake Singularity — 完整角色基类
 带状态机、优先级调度、资源管理、错误恢复
-Copyright (c) 2026 Jiaxiang Cong, Lingyuan Kong Lab, Westlake University
+Copyright (c) 2026 Westlake Singularity Contributors
 """
 
 import asyncio

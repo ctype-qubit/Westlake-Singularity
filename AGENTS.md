@@ -61,7 +61,7 @@
 
 ---
 
-## Agent 角色系统 (v0.1.2)
+## Agent 角色系统 (v0.2.0)
 
 | 角色 | 等级 | 职责 |
 |------|------|------|
@@ -88,9 +88,9 @@
 ## 开发者签名
 
 ```
-Westlake Singularity v0.1.2
-Developer: Jiaxiang Cong (丛家祥)
-Lab: Lingyuan Kong Lab (孔令元课题组)
+Westlake Singularity v0.2.0
+Developer: Westlake Singularity Team
+Lab: Westlake University
 Institution: Westlake University (西湖大学)
 Department: Physics, Condensed Matter Physics
 Location: Hangzhou, China

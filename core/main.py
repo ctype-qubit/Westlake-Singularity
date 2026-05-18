@@ -1,6 +1,6 @@
 """Westlake Singularity — Main Entry Point
 Usage: python -m core.main [--role ROLE] [--tui]
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import sys
@@ -12,8 +12,8 @@ def show_banner():
         from branding.banner import show_banner
         show_banner(big=True)
     except ImportError:
-        print("⚛  Westlake Singularity v0.1.2")
-        print("   Developer: Jiaxiang Cong · Lingyuan Kong Lab")
+        print("⚛  Westlake Singularity v0.2.0")
+        print("   Developer: Westlake Singularity")
         print("   Westlake University")
 
 async def start_lab(role: str = "orchestrator"):
@@ -61,7 +61,7 @@ async def start_lab(role: str = "orchestrator"):
 def main():
     parser = argparse.ArgumentParser(
         description="Westlake Singularity — AI量子实验室",
-        epilog="Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University"
+        epilog="Developer: Westlake Singularity Contributors"
     )
     parser.add_argument("--role", "-r", default="orchestrator",
                        choices=["orchestrator", "guard", "mapper", "discovery", "compute", "all"],
@@ -72,8 +72,8 @@ def main():
     args = parser.parse_args()
     
     if args.version:
-        print("Westlake Singularity v0.1.2")
-        print("Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University")
+        print("Westlake Singularity v0.2.0")
+        print("Developer: Westlake Singularity Contributors")
         print("Team: Jupiter · Venus · Mars · Mercury · Saturn")
         sys.exit(0)
     

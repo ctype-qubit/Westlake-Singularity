@@ -1,6 +1,6 @@
 """HardwareTool — 实验室硬件控制抽象层
 光源、温控、磁场、真空等
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 from dataclasses import dataclass

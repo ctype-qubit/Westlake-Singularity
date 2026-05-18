@@ -1,6 +1,6 @@
 """EventBus — WebSocket事件总线
 将Agent事件桥接到硬件控制、AR/VR叠加、灯光效果
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

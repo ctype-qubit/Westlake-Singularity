@@ -1,5 +1,5 @@
 """RAGMemory — 检索增强记忆系统
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import json

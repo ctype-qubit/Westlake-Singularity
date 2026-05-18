@@ -1,5 +1,5 @@
 """Westlake Singularity — Agent角色系统
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 from .base import BaseRole, Message, MessageBus, Priority, Permission, AgentMessage, RoleState, ResourceQuota
@@ -31,6 +31,6 @@ __all__ = [
     "RoleRegistry", "registry",
 ]
 
-__version__ = "0.1.2"
-__author__ = "Jiaxiang Cong · Lingyuan Kong Lab · Westlake University"
+__version__ = "0.2.0"
+__author__ = "Westlake Singularity Contributors"
 __team__ = ["Jupiter", "Venus", "Mars", "Mercury", "Saturn"]

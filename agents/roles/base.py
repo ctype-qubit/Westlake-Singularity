@@ -1,7 +1,7 @@
 """
 Westlake Singularity — Agent角色系统
 完整实现入口
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 from .base_full import (

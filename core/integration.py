@@ -6,7 +6,7 @@ Westlake Singularity — Hermes Agent 集成核心
 - Hermes 负责: LLM调用、Tool注册/执行、Provider管理、Gateway通讯、Memory
 - 我们负责: 角色系统、WAP协议、科学验证、实验工具、数字孪生、品牌
 
-Copyright (c) 2026 Jiaxiang Cong, Lingyuan Kong Lab, Westlake University
+Copyright (c) 2026 Westlake Singularity Contributors
 Based on Hermes Agent (c) 2025 Nous Research, MIT License
 """
 
@@ -126,11 +126,11 @@ For every analysis or calculation, follow this rigorous procedure:
 SINGULARITY_BRAND = {
     "name": "Westlake Singularity",
     "short_name": "Singularity",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "icon": "⚛",
     "prompt": "❯",
-    "developer": "Jiaxiang Cong",
-    "lab": "Lingyuan Kong Lab",
+    "developer": "Westlake Singularity Team",
+    "institution": "Westlake University",
     "institution": "Westlake University",
     "department": "Physics, Condensed Matter Physics",
     "agents": {

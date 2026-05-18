@@ -1,5 +1,5 @@
 """Westlake Singularity — setup
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 from setuptools import setup, find_packages
 
@@ -8,9 +8,9 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="westlake-singularity",
-    version="0.1.2",
+    version="0.2.0",
     author="Jiaxiang Cong",
-    author_email="congjiaxiang@westlake.edu.cn",
+    author_email="singularity@westlake.edu.cn",
     description="AI-Native Quantum Laboratory Operating System — 西湖大学AI量子实验室",
     long_description=long_description,
     long_description_content_type="text/markdown",

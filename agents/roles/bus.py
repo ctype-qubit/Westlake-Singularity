@@ -1,6 +1,6 @@
 """MessageBus — Agent消息总线
 异步发布/订阅系统，支持广播和点对点消息
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

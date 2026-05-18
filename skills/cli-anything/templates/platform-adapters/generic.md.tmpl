@@ -1,0 +1,19 @@
+{# Generic platform adapter template.
+   Generates a platform-agnostic SKILL.md with only the two required
+   frontmatter fields: name and description. No hooks, no metadata,
+   no platform-specific configuration.
+
+   The output is packaged as a .skill zip file containing:
+   - SKILL.md (this file)
+   - scripts/ (if any)
+   - references/ (if any)
+   - assets/ (if any)
+
+   All script paths must be relative to the skill root directory. #}
+---
+name: {{ skill_name }}
+description: >
+  {{ description }}
+---
+
+{{ skill_body }}

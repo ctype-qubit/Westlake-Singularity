@@ -1,7 +1,7 @@
 """
 Westlake Singularity CLI — 完整命令行界面
 基于 Hermes CLI 重构，使用 Westlake Singularity 品牌
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import argparse
@@ -23,10 +23,10 @@ def show_banner():
     except ImportError:
         print(r"""
 ╔══════════════════════════════════════════════════════╗
-║  ⚛  WESTLAKE SINGULARITY  v0.1.2              ║
+║  ⚛  WESTLAKE SINGULARITY  v0.2.0              ║
 ║  AI-Native Quantum Laboratory Operating System        ║
 ║                                                      ║
-║  Developer: Jiaxiang Cong · Lingyuan Kong Lab        ║
+║  Developer: Westlake Singularity        ║
 ║  Westlake University · Physics · CMP                  ║
 ║                                                      ║
 ║  Team: Jupiter · Venus · Mars · Mercury · Saturn      ║
@@ -108,7 +108,7 @@ def main():
     parser = argparse.ArgumentParser(
         prog="singularity",
         description="Westlake Singularity — AI量子实验室操作系统",
-        epilog="Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University"
+        epilog="Developer: Westlake Singularity Contributors"
     )
     
     parser.add_argument("--role", "-r", default="orchestrator",
@@ -126,8 +126,8 @@ def main():
     args = parser.parse_args()
     
     if args.version:
-        print("Westlake Singularity v0.1.2")
-        print("Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University")
+        print("Westlake Singularity v0.2.0")
+        print("Developer: Westlake Singularity Contributors")
         print("Team: Jupiter(木星) Venus(金星) Mars(火星) Mercury(水星) Saturn(土星)")
         print("Based on: Hermes Agent v0.13.0 (Nous Research, MIT License)")
         return 0

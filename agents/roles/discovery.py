@@ -1,7 +1,7 @@
 """DiscoveryRole — 异常发现Agent
 相变检测、拓扑信号识别、异常模式发现、patc
 h-clamp触发
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 from typing import Optional

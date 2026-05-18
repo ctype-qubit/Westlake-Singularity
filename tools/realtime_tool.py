@@ -1,6 +1,6 @@
 """RealtimeTool — WebSocket实时流式工具
 毫秒级反馈环路，支持STM数据流、传感器流
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

@@ -1,0 +1,28 @@
+{# OpenClaw platform adapter template.
+   Generates a SKILL.md with minimal frontmatter (name + description only).
+   Hooks and tool permissions are configured externally in settings.json. #}
+---
+name: {{ skill_name }}
+description: >
+  {{ description }}
+---
+
+{{ skill_body }}
+
+{# Note: Hooks and allowed tools are not embedded in SKILL.md for OpenClaw.
+   Generate a separate settings.json fragment alongside this file:
+
+   {
+     "skills": {
+       "{{ skill_name }}": {
+         "hooks": {
+{% for event, command in hooks.items() %}
+           "{{ event | lower | replace('userpromptsubmit', 'user_prompt_submit') | replace('pretooluse', 'pre_tool_use') | replace('posttooluse', 'post_tool_use') }}": "{{ command }}"{% if not loop.last %},{% endif %}
+
+{% endfor %}
+         },
+         "allowed_tools": {{ allowed_tools | default([], true) | tojson }}
+       }
+     }
+   }
+#}

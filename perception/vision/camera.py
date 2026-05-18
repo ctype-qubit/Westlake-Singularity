@@ -1,6 +1,6 @@
 """VisionTool — 8K视觉感知
 实时图像采集、缺陷检测、特征提取
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 class VisionTool:

@@ -1,6 +1,6 @@
 """STMTool — Nanonis STM控制工具
 模拟STM针尖控制接口，可对接真实Nanonis API
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import json

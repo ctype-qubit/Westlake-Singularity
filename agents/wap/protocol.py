@@ -1,6 +1,6 @@
 """WAP — Westlake Agent Protocol
 跨Agent联邦通讯协议，灵感来自ActivityPub
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import json
@@ -15,7 +15,7 @@ from typing import Optional
 # ═══════════════════════════════════════════
 # 协议版本
 # ═══════════════════════════════════════════
-PROTOCOL_VERSION = "0.1.0"
+PROTOCOL_VERSION = "0.2.0"
 PROTOCOL_NAME = "Westlake Agent Protocol"
 
 class MessageType(str):

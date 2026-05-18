@@ -1,0 +1,32 @@
+skill_name: {{ skill_name }}
+version: "1.0.0"
+target: {{ target_name }}
+target_type: {{ target_type }}
+generated_by: SkillAnything v1.0.0
+generated_at: {{ generated_at }}
+
+source:
+  url: {{ target_url | default("null", true) }}
+  path: {{ target_path | default("null", true) }}
+  analysis_hash: {{ analysis_hash }}
+
+platforms:
+{% for platform in platforms %}
+  - {{ platform }}
+{% endfor %}
+
+primary_platform: {{ primary_platform | default("claude-code", true) }}
+
+structure:
+  sections:
+{% for section in sections %}
+    - {{ section }}
+{% endfor %}
+  scripts:
+{% for script in scripts %}
+    - {{ script }}
+{% endfor %}
+  references:
+{% for ref in references %}
+    - {{ ref }}
+{% endfor %}

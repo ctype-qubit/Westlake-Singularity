@@ -1,5 +1,5 @@
 """Westlake Singularity 工具层
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 from .stm_tool import STMTool
 from .realtime_tool import RealtimeTool

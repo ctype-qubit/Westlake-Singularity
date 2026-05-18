@@ -1,6 +1,6 @@
 """
 Westlake Singularity — COMSOL Multiphysics桥接器
-Developer: Jiaxiang Cong · Lingyuan Kong Lab · Westlake University
+Developer: Westlake Singularity Contributors
 """
 
 import asyncio

@@ -1,7 +1,7 @@
 #!/bin/bash
 # ╔══════════════════════════════════════════════════════════╗
 # ║  ⚛  WESTLAKE SINGULARITY — 一键安装脚本                ║
-# ║  Developer: Jiaxiang Cong · Lingyuan Kong Lab            ║
+# ║  Developer: Westlake Singularity            ║
 # ║  Westlake University · Physics · CMP                      ║
 # ║  Team: Jupiter(木星) Venus(金星) Mars(火星)               ║
 # ║        Mercury(水星) Saturn(土星)                         ║
